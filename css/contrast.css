@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&amp;display=swap');
+/*@font-face {
+	font-family: "Franklin Gothic Medium";
+	src: url('../fonts/Franklin Gothic Medium.otf'), url('../fonts/Franklin Gothic Medium.ttf') format('truetype'), url('../fonts/Franklin Gothic Medium.woff') format('truetype')
+}*/
+
+#switcher button {
+    float: left;
+    color: #fff;
+}
+body.gray {}
+body.blue {
+	background: url("../../images/bg-pattern.html") repeat;
+}
+
+
+
+.black {
+	background: #000;
+	color: #fff;
+	border: 1px solid #000;
+}
+.black .font-grid {
+	border: 1px solid #fff;
+}
+.black .footer-title span {
+	color: #fff;
+}
+.black .footer-title ul li a {
+	color: #fff;
+}
+.black .footer-title ul li i {
+	color: #fff;
+}
+.black .footer-title p i {
+	color: #fff;
+}
+.black #footer-grid {
+	background: rgb(0 0 0 / 62%);
+}
+.black .main-grid {
+	background: #000;
+}
+.black .p-slide h2 {
+	color: #fff;
+}
+.black .section-head h2, .black .section-head h5 {
+	color: #fff;
+}
+
+.black .header-style-6.dark .main-bar{
+	background: #000000;
+}
+.black .footer-overlay .footer-top {
+    background-color: rgb(0 0 0 / 77%);
+}
+
+.black .footer-overlay .footer-bottom {
+    background-color: rgb(0 0 0);
+}
+.black .header-style-6 .top-bar-crve:before{
+	    background: #000000;
+}
+.black .message-grid {
+    background: #000;
+}
+.black .message-grid h3, .black .message-grid p{
+	color: #fff;
+}
+.black .news-title > h2, .black .news-body {
+    background: #000000;
+}
+.black .recent-posts-entry .widget-post {
+    background: #000;
+}
+.black h6 a {
+    color: #ffffff;
+}
+.black .overlay-black-middle:after{
+	background: #000000;
+	
+}
+.black .overlay-black-dark:after{
+   	background: #000000;
+}
+.black .hvr-wobble-horizontal {
+    background: rgb(0 0 0 / 88%);
+}
+
+.black .hvr-wobble-horizontal h4, .black .hvr-wobble-horizontal p{
+	color: #fff;
+}
+.black .dez-box {
+    background: #000000;
+}
+.black .element {
+    background: #5a5a5a;
+}
+.black .testimonial-4 {
+    background-color: transparent;
+}
+.black .testimonial-4:after {
+    background-color: transparent;
+}
+.black .testimonial-text p{
+	color: #fff;
+}
+.black .testimonial-4 .testimonial-position {
+    color: #ffffff;
+}
+.black  .footer-skew .footer-top:after, .black  .footer-skew .footer-top:before {
+    background: #000;
+    content: "";
+    position: absolute;
+}
+
+
+
+.black .sitewidth {
+    background: #000000;
+}
+
+.black .my-list p a {
+	color: #fff;
+}
+.black #footer-bottom-grid {
+	background: #000000;
+	border-top: 1px solid #fff;
+}
+.black .gig-rules {
+	background-color: rgb(0 0 0);
+	border-bottom: 1px solid #fff;
+}
+.black {}
+.black {}
+.black {}
+.black {}
+.black {}
+.black {}
+.black {}
+.blue {
+    background: #ffffff;
+    border: 1px solid #fff;
+    margin-right: 2px;
+    color: #000 !important;
+}
+
+
+
+
+/* Copyright 2021 Google Inc. All Rights Reserved. */
+
+.skiptranslate{
+	display: none !important;
+}
+
