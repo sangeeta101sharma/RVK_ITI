@@ -2,6 +2,7 @@
 session_start();
 include("connection.php");
 if($_SERVER["REQUEST_METHOD"]="POST"){
+    $id = $_POST['id'];
     //upload logo
     $image=$_FILES['image']['name'];
     $image_tmpname=($_FILES['image']['tmp_name']);
@@ -17,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"]="POST"){
         exit();
     }
 
-    $id = $_POST['id'];
+    
     $name = $_POST['name'];
     $contact = $_POST['contact'];
     $address = $_POST['address'];

@@ -66,14 +66,14 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
                                 </div><!-- end card header -->
                                 <div class="card-body">
                                     <div class="live-preview">
-                                        <form>
+                                        <form id="file-upload-form" enctype="multipart/form-data">
                                             <div class="row">
-                                            <div class="col-md-6">
+                                                <div class="col-md-6">
                                                     <div class="mb-3">
-                                                        <label for="photoUpload" class="form-label">Photo Upload
+                                                        <label for="photo" class="form-label">Photo Upload
                                                         </label>
-                                                        <input type="file" class="form-control" id="gallery"
-                                                            name="gallery" required>
+                                                        <input type="file" class="form-control" id="photo"
+                                                            name="photo" required>
                                                             <p style="color:red;"> Only JPG, JPEG and PNG type images are accepted.</p>
                                                     </div>
                                                 </div>
@@ -106,7 +106,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
                                                 <div class="text-end">
                                                 <input type="hidden" id="action" name="action" value="<?php echo(isset($_GET['id']) && !empty($_GET['id'])) ? "UPDATE":"INSERT";?>">
                                                  <input type="hidden" id="id" name="id" value="<?php echo(isset($_GET['id']) && !empty($_GET['id'])) ? $_GET['id']:0 ;?>">
-                                                <button onclick="submitform()" class="btn btn-primary">Submit</button>
+                                                <button  id="upload-button" class="btn btn-primary">Submit</button>
                                                 </div>
                                             </div>
                                             <!--end col-->
@@ -122,52 +122,47 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
                         </div>         
                <!-- end col -->
                     </div>
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
                      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
                     <script  type="text/javascript" src="JQUERY.js"></script>
                      <!-- form AJAX -->
-                    <script>
-                        function submitform(){
-                            event.preventDefault();                          
-                            var Gallery = document.getElementById("gallery").value;
+                     <script>
+        $(document).ready(function () {
+    $('#upload-button').on('click', function (e) {
+        e.preventDefault();  
+        var formData = new FormData();
+        formData.append('photo', $('#photo')[0].files[0]);
+        formData.append('title', $('#title').val());
+        formData.append('description', $('#description').val());
+        formData.append('date', $('#date').val());
+        formData.append('action', $('#action').val());
+        formData.append('id', $('#id').val());
 
-                            Gallery.addEventListener("change", function() {
-  var file = Gallery.files[0];
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", "process/latest_news.php", true);
-  xhr.send(gallery);
+        $.ajax({
+            type: 'POST',
+            url: 'process/latest_news.php',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (result) {
+               console.log(result);
+               //alert(result);
+               var data=$.parseJSON(result);
+               if(data.status==1){
+                swal('',data.msg,"success");
+                location.reload();
+               }
+               else{
+                swal('',data.msg , "error");
+               } 
+            }
+        });
+    });
 });
 
-                            var Title = document.getElementById("title").value;
-                            var Description = document.getElementById("description").value; 
-                            var Date = document.getElementById("date").value;
-                            var Action = document.getElementById("action").value;
-                            var Id = document.getElementById("id").value;
-                           
-                           var dataStringer = "gallery="+Gallery+
-                            "&title="+Title+
-                            "&description="+Description+
-                            "&date="+Date+
-                            "&action="+Action+
-                            "&id="+Id;
-                            console.log(dataStringer);
-                            $.ajax({
-                                url:"process/latest_news.php",
-                                type:"POST",
-                                cache:false,
-                                data:dataStringer,
-                                success:function(result){
-                                    console.log(result);
-                                  var d = $.parseJSON(result);
-                                if(d.status == 1){
-                                   swal('', d.msg, 'success'); 
-                                   location.reload();
-                                }else{
-                                    swal('', d.msg, 'error');  
-                                } 
-                                } 
-                            }) ;
-                        }
+    </script>
                     </script>
                     
                     <!-- Show table Start -->
@@ -222,7 +217,7 @@ while($row = mysqli_fetch_array($result)){
                                                         </td>
                                                         <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary"></a></td>
                                                         
-                                                        <td class="customer_name"><a href="../<?php echo $row['gallery'];?>" target="_blank"><img src="../<?php echo $row['gallery'];?>" style="width:50px;height:50px;border-radius:50px;" alt=""></a>  </td>
+                                                        <td class="customer_name"><a href="process/<?php echo $row['gallery'];?>" target="_blank"><img src="process/<?php echo $row['gallery'];?>" style="width:50px;height:50px;border-radius:50px;" alt=""></a>  </td>
                                                         <td>
 
                                                         <td class="customer_name"> 

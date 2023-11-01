@@ -45,19 +45,51 @@
                         </li>
                         <li class="nav-item">
                             <a href="site_setting.php" class="nav-link" data-key="t-analytics">
-                            <i class="ri-pages-line"></i> Site Setting </a>
+                            <i class="ri-file-settings-line"></i> Site Setting </a>
                         </li>
                         <li class="nav-item">
                             <a href="latest_news.php" class="nav-link" data-key="t-analytics">
                             <i class="ri-newspaper-fill"></i> Latest News </a>
                         </li>
                         <li class="nav-item">
+                            <a href="students_registration.php" class="nav-link" data-key="t-analytics">
+                            <i class="ri-registered-fill"></i>Students Registration</a>
+                        </li>
+                    <!-- dropdown menu start -->
+
+                    <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarForms" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarForms">
+                                <i class="ri-file-list-3-line"></i> <span data-key="t-forms">Full Details</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarForms">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="branch.php" class="nav-link" data-key="t-basic-elements">Branch</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="university.php" class="nav-link" data-key="t-form-select"> University </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="trade.php" class="nav-link" data-key="t-checkboxs-radios">Trade</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="course.php" class="nav-link" data-key="t-pickers"> Course </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="subject.php" class="nav-link" data-key="t-input-masks">Subject</a>
+                                    </li>  
+                                </ul>
+                            </div>
+                        </li>
+
+                    <!-- dropdown menu end -->    
+                        <li class="nav-item">
                             <a href="fitter.php" class="nav-link" data-key="t-analytics">
-                            <i class="ri-arrow-down-circle-fill"></i> Fitter </a>
+                            <i class="ri-tools-line"></i> Fitter </a>
                         </li>
                         <li class="nav-item">
                             <a href="electrician.php" class="nav-link" data-key="t-analytics">
-                            <i class="ri-arrow-down-circle-fill"></i> Electrician </a>
+                            <i class="ri-creative-commons-nd-fill"></i> Electrician </a>
                         </li>
                         <li class="nav-item">
                             <a href="holiday.php" class="nav-link" data-key="t-analytics">
@@ -65,32 +97,32 @@
                         </li>
                         <li class="nav-item">
                             <a href="achiever.php" class="nav-link" data-key="t-analytics">
-                            <i class="ri-nurse-fill"></i>Achiever</a>
+                            <i class="ri-award-fill"></i>Our Achiever</a>
                         </li>
                         <li class="nav-item">
                             <a href="placed_student.php" class="nav-link" data-key="t-analytics">
-                            <i class="ri-nurse-fill"></i>Placed Student</a>
+                            <i class="ri-medal-2-fill"></i>Placed Student</a>
                         </li>
                         <li class="nav-item">
                             <a href="registration.php" class="nav-link" data-key="t-analytics">
-                            <i class="ri-nurse-fill"></i> Registration</a>
+                            <i class="ri-attachment-fill"></i> Applied Job Resume </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="training_certificate.php" class="nav-link" data-key="t-analytics">
                             <i class="ri-nurse-fill"></i> Training Certificate</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a href="semester_annual_exam.php" class="nav-link" data-key="t-analytics">
-                            <i class="ri-nurse-fill"></i> Semester/Annual Exam</a>
+                            <i class="ri-article-line"></i> Semester/Annual Exam</a>
                         </li>
                         <li class="nav-item">
                             <a href="student_feedback.php" class="nav-link" data-key="t-analytics">
-                            <i class="ri-nurse-fill"></i> Students Feedback</a>
+                            <i class="ri-feedback-line"></i> Students Feedback</a>
                         </li>
-                        <li class="nav-item">
+                       <!--  <li class="nav-item">
                             <a href="exam_certificate_verification.php" class="nav-link" data-key="t-analytics">
                             <i class="ri-nurse-fill"></i> Exam Certificate Verification </a>
-                        </li>
+                        </li> -->
                        
                         <li class="nav-item">
                             <a href="manage_slider.php" class="nav-link" data-key="t-analytics">
@@ -114,7 +146,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="download.php" class="nav-link" data-key="t-analytics">
-                            <i class="ri-questionnaire-fill"></i> Download </a>
+                            <i class="ri-arrow-down-circle-fill"></i> Download </a>
                         </li>
                         <li class="nav-item">
                             <a href="log_out.php" class="nav-link" data-key="t-analytics">

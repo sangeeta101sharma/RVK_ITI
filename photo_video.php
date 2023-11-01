@@ -43,156 +43,111 @@
 </head>
 
 <body id="bg">
-
     <div class="page-wraper">
+
+        <!-- header -->
+
         <?php include('include/header.php');?>
         <!-- Content -->
+
         <style>
         .overlay-black-dark:after,
         .overlay-black-light:after,
         .overlay-black-middle:after {
+
             background: rgb(0 0 0 / 65%);
+
+        }
+
+        table {
+            text-align: center !important;
         }
         </style>
         <div class="page-content">
             <!-- inner page banner -->
-            <div class="dez-bnr-inr overlay-black-middle" style="background-image:url(pictures/gallery1.jpg);
+            <div class="dez-bnr-inr overlay-black-middle" style="background-image:url(pictures/placed_stu.jpg);
             background-size:cover;background-position: center;background-repeat: no-repeat;">
                 <div class="container">
                     <div class="dez-bnr-inr-entry">
-                        <h1 class="text-white">Video Gallery </h1>
+                        <h1 class="text-white">Videos &nbsp;</h1>
                     </div>
                 </div>
             </div>
-            <!-- inner page banner END -->
-            <!-- Breadcrumb row -->
-            <div class="breadcrumb-row">
-                <div class="container">
-                    <ul class="list-inline">
-                        <li><a href="index.php">Home</a></li>
-                        <li>Video Gallery </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Breadcrumb row END -->
+             
+                        <!-- Breadcrumb row -->
 
-            <div class="clearfix">
-                <div class="content-area">
+                        <div class="breadcrumb-row">
+
+<div class="container">
+
+    <ul class="list-inline">
+
+        <li><a href="index.php">Home</a></li>
+
+        <li>Video Gallery </li>
+
+    </ul>
+
+</div>
+
+</div>
+
+<!-- Breadcrumb row END -->
+
+
+
                     <div class="container">
                         <div class="row">
-
-                            <div class="col-lg-12 col-sm-12">
-
-                                <div id="masonry" class="row dez-blog-grid-3"
-                                    style="position: relative; height: 1186.9px;">
-
-                                    <div class="post card-container col-lg-3 col-sm-6 col-12"
-                                        style="position: absolute; left: 0px; top: 0px;">
-
-                                        <?php
-$i=1;
-$sql= "SELECT * FROM video_tbl";
-$result= mysqli_query($connection, $sql) or die("Query Failed.");
-while($row = mysqli_fetch_array($result)){
-
-
-?>
-
-                                        <div class="blog-post blog-grid date-style-2">
-                                            <div class="dez-post-media dez-img-effect zoom-slow"> 
-                                            <?php echo $row['video'];?>
-                                            </div>
-                                            <div class="dez-post-info">
-                                                    <h3 class="post-title">   <?php echo $row['remark'];?></h3>
-                                            </div>
-                                        </div>
-<?php }?>
-
-                                    </div>
+                        <?php
+                            $i=1;
+                            $sql= "SELECT * FROM video_tbl";
+                            $result= mysqli_query($connection, $sql) or die("Query Failed.");
+                            while($row = mysqli_fetch_array($result)){
+                        ?>
+                            <div class="col-lg-3 col-sm-12 m-b30 ">
+                                <div class="border-1 p-a15 text-center text-white ">
+                                    <p class="m-b0"><?php echo $row['video'];?></p>
                                 </div>
                             </div>
+                            <?php }?>
                         </div>
                     </div>
-                </div>
-            </div>
-            <!-- contact area END -->
+           
+            <!-- Content END-->
+            <?php include('include/footer.php');?>
         </div>
-        <!-- Content END--
-  <!-- Footer -->
-        <?php include('include/footer.php');?>
-
-        <!-- Footer END-->
-
-
-    </div>
-
-
-    <!-- JavaScript  files ========================================= -->
-
-    <script src="js/jquery.min.js"></script>
-
-    <script src="js/popper.min.php"></script>
-
-    <script src="js/bootstrap.min.js"></script>
-
-    <script src="js/bootstrap-select.min.js"></script>
-
-    <script src="js/jquery.bootstrap-touchspin.js"></script>
-
-    <script src="js/masonry.filter.js"></script>
-
-    <script src="js/owl.carousel.js"></script>
-
-    <script src="js/lightgallery-all.js"></script>
-
-    <script src="js/revolution.extension.video.min.js"></script>
-
-    <script src="js/rev.slider.js"></script>
-
-
-
-    <script src="js/customJS.js"></script>
-
-    <script>
-    jQuery(document).ready(function() {
-
-        'use strict';
-
-        dz_rev_slider_1();
-
-    }); /*ready*/
-
-
-
-
-
-    $('.carousel').carousel({
-
-        interval: 6000,
-
-        pause: "true"
-
-    });
-    </script>
-
-    <script>
-    $(document).ready(function() {
-
-        $("#myModal").modal('show');
-
-    });
-    </script>
-
-    <script>
-    $(document).ready(function() {
-
-        $("#myModal").modal('show');
-
-    });
-    </script>
-
-
-
+        <!-- JavaScript  files ========================================= -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.php"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap-select.min.js"></script>
+        <script src="js/jquery.bootstrap-touchspin.js"></script>
+        <script src="js/masonry.filter.js"></script>
+        <script src="js/owl.carousel.js"></script>
+        <script src="js/lightgallery-all.js"></script>
+        <script src="js/revolution.extension.video.min.js"></script>
+        <script src="js/rev.slider.js"></script>
+        <script src="js/customJS.js"></script>
+        <script>
+        jQuery(document).ready(function() {
+            'use strict';
+            dz_rev_slider_1();
+        }); /*ready*/
+        $('.carousel').carousel({
+            interval: 6000,
+            pause: "true"
+        });
+        </script>
+        <script>
+        $(document).ready(function() {
+            $("#myModal").modal('show');
+        });
+        </script>
+        <script>
+        $(document).ready(function() {
+            $("#myModal").modal('show');
+        });
+        </script>
 </body>
 
 </html>

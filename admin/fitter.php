@@ -15,7 +15,7 @@ if(!isLoggedIn()){
 <?php 
 if(isset($_GET['id']) && !empty($_GET['id'])){
     $id=$_GET['id'];
-    $sql= "SELECT * FROM  donate_tbl where id=$id";
+    $sql= "SELECT * FROM  fitter_tbl where id=$id";
     $result= mysqli_query($connection, $sql) or die("Query Failed.");
     if(mysqli_num_rows($result)==0){
          header("location:fitter.php?status=2&msg=Oops! Record not found..");
@@ -164,8 +164,8 @@ data-sidebar-image="none" data-preloader="disable">
                                             <!--end col-->
                                             <div class="col-lg-12">
                                                 <div class="text-end">
-                                                <input type="hidden" id="action" name="action" value="<?php echo(isset($_GET['id']) && !empty($_GET['id'])) ? "UPDATE":"INSERT";?>">
-                                                 <input type="hidden" id="id" name="id" value="<?php echo(isset($_GET['id']) && !empty($_GET['id'])) ? $_GET['id']:0 ;?>">
+                                                <input type="hidden" id="action" name="action" value="<?php echo(isset($_GET['id']) && !empty($_GET['id'])) ?"UPDATE":"INSERT";?>">
+                                                 <input type="hidden" id="id" name="id" value="<?php echo(isset($_GET['id']) && !empty($_GET['id'])) ?$_GET['id']:0 ;?>">
                                                     <button type="submit" class="btn btn-primary"
                                                         value="submit">Submit</button>
                                                 </div>

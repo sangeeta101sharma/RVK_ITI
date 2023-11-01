@@ -3,14 +3,14 @@ include("connection.php");
  
 $id=$_GET['id'];
    //delete image from folder
-  echo $sql= "SELECT * FROM  general_team_tbl where id=$id";  
+  echo $sql= "SELECT * FROM  registration_tbl where id=$id";  
   $result= mysqli_query($connection, $sql) or die("Query Failed.");
    $row = mysqli_fetch_array($result);
    $doctor_list=$row['doctor_list'];
 
     unset($doctor_list);
 
-      $sql ="DELETE FROM  general_team_tbl where id=$id";
+      $sql ="DELETE FROM  registration_tbl where id=$id";
      $result=mysqli_query($connection,$sql)or die("Query Failed.");
     if ($result){
         $status = 1;

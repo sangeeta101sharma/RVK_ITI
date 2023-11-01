@@ -129,7 +129,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
                                                 <tbody class="list form-check-all">
 <?php
 $i=1;
-$sql= "SELECT * FROM  general_team_tbl";
+$sql= "SELECT * FROM  registration_tbl";
 $result= mysqli_query($connection, $sql) or die("Query Failed.");
 while($row = mysqli_fetch_array($result)){
 ?>
@@ -157,7 +157,7 @@ while($row = mysqli_fetch_array($result)){
                                                         <?php echo $row['job'];?>
                                                         </td>
                                                         <td class="customer_name"> 
-                                                        <?php echo $row['desired_location'];?>
+                                                        <?php echo $row['location'];?>
                                                         </td>
                                                         <td class="customer_name"> 
                                                         <?php echo $row['expected_salary'];?>
@@ -166,19 +166,22 @@ while($row = mysqli_fetch_array($result)){
                                                         <?php echo $row['experience'];?>
                                                         </td>
                                                         <td class="customer_name"> 
-                                                        <?php echo $row['previous_company'];?>
+                                                        <?php echo $row['company_name'];?>
                                                         </td>
                                                         <td class="customer_name"> 
                                                         <?php echo $row['previous_salary'];?>
                                                         </td>
-                                                        <td class="customer_name"> 
-                                                        <?php echo $row['resume'];?>
+                                                        <!-- <td class="customer_name"> 
+                                                        <?php //echo $row['resume'];?>
+                                                        </td> -->
+                                                        <td>
+                                                             <a class="btn btn-success" href="process/<?php echo trim($row['resume']) ;?>" target="_blank"  download class="btn btn-sm btn-light">Download</a>
                                                         </td>
                                                         <td>
                                                             <div class="d-flex gap-2">
-                                                                <div class="edit">
+                                                              <!--   <div class="edit">
                                                                     <a class="btn btn-sm btn-success edit-item-btn" href="registration.php?id=<?php echo $row['id']?>">Update</a>
-                                                                </div> 
+                                                                </div>  -->
                                                                 <div class="remove">
                                                                     <a href="process/remove_registration.php?id=<?php echo $row['id'];?>" onclick="return confirm('Are you sure you want to delete?')";  class="btn btn-sm btn-danger remove-item-btn">Remove</a>
                                                                 </div>

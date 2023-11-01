@@ -5,7 +5,7 @@ if($_SERVER["REQUEST_METHOD"]="POST"){
   //upload favicon
   $favicon=$_FILES['favicon']['name'];
   $favicon_tmpname=($_FILES['favicon']['tmp_name']);
-  $FAVICON = "pictures/".$favicon;
+  $FAVICON = "images/".$favicon;
   move_uploaded_file($favicon_tmpname, $FAVICON);
   
   $allowed = array('jpeg', 'png', 'jpg');
@@ -58,7 +58,7 @@ if($_POST['action']=="UPDATE"){
      `contact`=$contact,
      `email`='$email',
      `address`='$address'
-     WHERE id=$id";
+     WHERE id='$id'";
 }
 if($_POST['action']=="INSERT"){
     $sql = "INSERT INTO `site_setting_tbl` SET 

@@ -423,6 +423,9 @@
 
 
 
+                                  <li><a target="_self" href="latest_news.php" title="contact_us" data-ref="home">
+                                          Latest News</a></li>
+
                                   <li><a target="_self" href="contact.php" title="contact_us" data-ref="home">
                                           Contact</a></li>
 

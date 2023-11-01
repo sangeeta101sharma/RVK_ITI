@@ -60,7 +60,7 @@ else{
 $result= mysqli_query($connection,$sql) or die("Query Failed.");
 if ($result)
 {
-    $arr = array("status"=>1,"msg"=>"Your data has been Updated. ");
+    $arr = array("status"=>1,"msg"=>"YourFeedback has been Submited Successfully...!! ");
     echo json_encode($arr);
 }
 else{

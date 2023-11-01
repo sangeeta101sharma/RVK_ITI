@@ -11,12 +11,12 @@ $id=$_GET['id'];
     if ($result){
         $status = 1;
         $message = " Deleted Successfully...";
-        header('location:../admin_details.php?status='.$status.'&msg='.$message);
+        header('location:../student_feedback.php?status='.$status.'&msg='.$message);
         exit();
     }else{
         $status = 2;
         $message = "Something went wrong!!!";
-        header('location:../admin_details.php?status='.$status.'&msg='.$message);
+        header('location:../student_feedback.php?status='.$status.'&msg='.$message);
         exit();
     }
 

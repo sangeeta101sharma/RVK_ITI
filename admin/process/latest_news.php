@@ -8,9 +8,9 @@ include("connection.php");
    
 
        //upload document
-       $gallery=$_FILES['gallery']['name'];
-       $galleryfile_tmpname=($_FILES['gallery']['tmp_name']);
-       $GALLERY = "pictures/".$gallery;
+       $gallery=$_FILES['photo']['name'];
+       $galleryfile_tmpname=($_FILES['photo']['tmp_name']);
+       $GALLERY = "file/".$gallery;
        move_uploaded_file($galleryfile_tmpname, $GALLERY);
        
        $allowed = array('jpeg', 'png', 'jpg');

@@ -142,7 +142,9 @@ while($row = mysqli_fetch_array($result)){
                                         <tr>
                                             <th scope="row"><?php echo $i++;?></th>
                                             <td><?php echo $row['title'];?></td>
-                                            <td><a class="btn btn-success" href="admin/process/<?php echo $row['file'];?>" target="_blank"  download class="btn btn-sm btn-light">Download</a></td>
+                                            <td>
+                                                <a class="btn btn-success" href="admin/process/<?php echo $row['file'];?>" target="_blank"  download class="btn btn-sm btn-light">Download</a>
+                                            </td>
                                         </tr>
                                     </tbody>
 <?php }?>

@@ -24,9 +24,10 @@
     <link rel="stylesheet" type="text/css" href="css/contrast.css">
 
     <script type="text/javascript"
-    src="https://counter6.optistats.ovh/private/counter.js?c=x14851zybcxjtpxxt9hkdkjg1cl71bdp&down=async" async>
+        src="https://counter6.optistats.ovh/private/counter.js?c=x14851zybcxjtpxxt9hkdkjg1cl71bdp&down=async" async>
     </script>
 </head>
+
 <body id="bg">
     <?php include('include/header.php'); ?>
     <div class="page-wraper">
@@ -93,63 +94,27 @@
                             <div id="slider_01" class="rev_slider fullwidthabanner" style="display:none;"
                                 data-version="5.3.0.2">
                                 <ul>
-                                <?php
+                                    <?php
                                                     $i=1;
                                                     $sql= "SELECT * FROM slider_tbl";
                                                     $result= mysqli_query($connection, $sql) or die("Query Failed.");
                                                     while($row = mysqli_fetch_array($result)){
-                                ?>  
+                                ?>
                                     <!-- SLIDE -->
                                     <li data-index="rs-200" data-transition="parallaxvertical" data-slotamount="default"
                                         data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default"
                                         data-easeout="default" data-masterspeed="default"
-                                        data-thumb="<?php echo $row['slider'];?>" data-rotate="0" data-fstransition="fade"
-                                        data-fsmasterspeed="1500" data-fsslotamount="8" data-saveperformance="off"
-                                        data-title="" data-param1="" data-param2="" data-param3="" data-param4=""
-                                        data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
-                                        data-param10="">
+                                        data-thumb="<?php// echo $row['slider'];?>" data-rotate="0"
+                                        data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="8"
+                                        data-saveperformance="off" data-title="" data-param1="" data-param2=""
+                                        data-param3="" data-param4="" data-param5="" data-param6="" data-param7=""
+                                        data-param8="" data-param9="" data-param10="">
                                         <!-- MAIN IMAGE -->
-                                        <img src="<?php echo $row['slider'];?>" alt="" data-bgposition="center center"
-                                            data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10"
-                                            class="rev-slidebg" data-no-retina>
+                                        <img src="<?php echo $row['slider'];?>" alt="" width="1120" height="250">
                                         <!-- LAYERS -->
                                     </li>
                                     <?php }?>
-                                    <!-- SLIDE -->
-                                    <!-- SLIDE -->
-                                   <!--  <li data-index="rs-200" data-transition="parallaxvertical" data-slotamount="default"
-                                        data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default"
-                                        data-easeout="default" data-masterspeed="default"
-                                        data-thumb="images/main-slider/2.jpg" data-rotate="0" data-fstransition="fade"
-                                        data-fsmasterspeed="1500" data-fsslotamount="8" data-saveperformance="off"
-                                        data-title="" data-param1="" data-param2="" data-param3="" data-param4=""
-                                        data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
-                                        data-param10="">
-                                         MAIN IMAGE 
-                                        <img src="img/main-slider/2.jpg" alt="" data-bgposition="center center"
-                                            data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10"
-                                            class="rev-slidebg" data-no-retina>
-                                         LAYERS 
-                                    </li> -->
-                                    <!-- SLIDE -->
-                                    <!-- SLIDE -->
-                                  <!--   <li data-index="rs-200" data-transition="parallaxvertical" data-slotamount="default"
-                                        data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default"
-                                        data-easeout="default" data-masterspeed="default"
-                                        data-thumb="images/main-slider/3.jpg" data-rotate="0" data-fstransition="fade"
-                                        data-fsmasterspeed="1500" data-fsslotamount="9" data-saveperformance="off"
-                                        data-title="" data-param1="" data-param2="" data-param3="" data-param4=""
-                                        data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
-                                        data-param10="">
-                                         MAIN IMAGE 
-                                        <img src="img/main-slider/3.jpg" alt="" data-bgposition="center center"
-                                            data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10"
-                                            class="rev-slidebg" data-no-retina>
-                                         LAYERS
-                                    </li> -->
-                                    <!-- SLIDE -->
                                 </ul>
-                                <!--   <div class="tp-bannertimer tp-bottom bg-primary"></div> -->
                             </div>
                         </div>
                         <!-- END REVOLUTION SLIDER -->
@@ -226,99 +191,79 @@
                                         provide the training and every possible support in all theirendeavors and
                                         academics.</p>
                                     <div class="m-tb30">
-                                        <a href="director_msg.php" class="site-button">Read More <i class="fa fa-angle-right"
-                                                aria-hidden="true"></i>
+                                        <a href="director_msg.php" class="site-button">Read More <i
+                                                class="fa fa-angle-right" aria-hidden="true"></i>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 m-b30">
-              <div class="">
-              
-          <div class="right-pic">
-          <img src="public/aliganj/img/p1.png" alt="">
-          <h4><strong>Shri. Yogi Adityanath</strong></h4><p>Chief Minister of Uttar Pradesh</p>
-            </div>
-          <div class="right-pic">
-          <img src="public/aliganj/img/p2.png" alt="">
-          <h4><strong>Shri. Kapil Dev Agrawal</strong></h4><p>Hon’ble State Minister (Independent Charge)</p>
-            </div>
-          
-               <div class="border-danger golge">
-            <div class="news-title">
-        <h2> <i class="fa fa-newspaper-o"></i> Notice Board</h2>
-              </div>
-            <div class="news-body">
-              <div class="carousel vert slide" data-ride="carousel" data-interval="2000">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-            <div class="recent-posts-entry text-center news-title">
-                  <div class="widget-post-bx">
-                        <div class="widget-post clearfix">
-                          <div class="dez-post-media"> <img src="images/gallery/1.html" alt="" width="200" height="200"> </div>
-                          <div class="dez-post-info">
-                            <div class="dez-post-header">
-                              <h6 class="post-title text-left"><a href="News-Events.html"> Registration starts from 1st nov 2019 for the Session 2020-21</a></h6>
-                              <h6>date:</h6>
+                                <div class="">
+
+                                    <div class="right-pic">
+                                        <img src="pictures/students.png" alt="">
+                                        <h4 style="padding:12px;text-align:center;">
+                                                   Students
+                                                    </h4>
+                                    </div>
+                                    <div class="right-pic">
+                                        <img src="pictures/job.jpg" alt="">
+                                        <h4 style="padding:10px;text-align:center;"><a href="registration.php"><button
+                                                    type="sumbit">Job Search</button></a></h4>
+                                    </div>
+
+                                    <div class="border-danger golge">
+                                        <div class="news-title">
+                                            <h2> <i class="fa fa-newspaper-o"></i> Notice Board</h2>
+                                        </div>
+                                        <div class="news-body">
+                                        
+                                            <marquee behavior="" direction="up" onmouseover="stop();" onmouseleave="start();" onscrollamount="2">
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item active">
+                                                        <div class="recent-posts-entry text-center news-title">
+                                                            <div class="widget-post-bx">
+                                                                <div class="widget-post clearfix">
+                                                                    <div class="dez-post-media"> <img
+                                                                            src="pictures/achiev.jpeg" alt=""
+                                                                            width="200" height="200"> </div>
+                                                                    <div class="dez-post-info">
+                                                                        <div class="dez-post-header">
+                                                                            <h6 class="post-title text-left">
+                                                                                <p><b style="color:brown;">Title:</b> Achievement
+                                                                               <b style="color:brown;">Description:</b> Our College achievement..!!
+                                                                                <br><b style="color:brown;">Date: </b>30 October 2023</p>
+                                                                            </h6>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-post clearfix">
+                                                                    <div class="dez-post-media"> <img
+                                                                            src="pictures/holiday.png" alt=""
+                                                                            width="200" height="200"> </div>
+                                                                    <div class="dez-post-info">
+                                                                        <div class="dez-post-header">
+                                                                            <h6 class="post-title text-left">
+                                                                                <p><b style="color:brown;">Title:</b> Diwali Holiday
+                                                                               <b style="color:brown;">Description:</b> This year 'Diwali Holiday' will be for 1 week.
+                                                                                <br><b style="color:brown;">Date: </b>8 November 2023</p>
+                                                                            </h6>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </marquee>
+                                               
+                                                <div class="m-tb5 text-center"> <a href="latest_news.php" class="site-button">Read
+                                                        More <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-            
-              <div class="recent-posts-entry text-center news-title">
-                  <div class="widget-post-bx">
-                        <div class="widget-post clearfix">
-                          <div class="dez-post-media"> <img src="images/gallery/2.html" alt="" width="200" height="200"> </div>
-                          <div class="dez-post-info">
-                            <div class="dez-post-header">
-                              <h6 class="post-title text-left"><a href="News-Events.html"> Registration starts from 1st nov 2019 for the Session 2020-21</a></h6>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-            
-          
-               </div>
-          
-           <div class="carousel-item">
-            <div class="recent-posts-entry text-center news-title">
-                  <div class="widget-post-bx">
-                        <div class="widget-post clearfix">
-                          <div class="dez-post-media"> <img src="images/gallery/1.html" alt="" width="200" height="200"> </div>
-                          <div class="dez-post-info">
-                            <div class="dez-post-header">
-                              <h6 class="post-title text-left"><a href="News-Events.html"> Registration starts from 1st nov 2019 for the Session 2020-21</a></h6>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-            
-              <div class="recent-posts-entry text-center news-title">
-                  <div class="widget-post-bx">
-                        <div class="widget-post clearfix">
-                          <div class="dez-post-media"> <img src="images/gallery/2.html" alt="" width="200" height="200"> </div>
-                          <div class="dez-post-info">
-                            <div class="dez-post-header">
-                              <h6 class="post-title text-left"><a href="News-Events.html"> Registration starts from 1st nov 2019 for the Session 2020-21</a></h6>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-            
-          
-               </div>
-           
-                </div>
-              </div>
-         <div class="m-tb5 text-center"> <a href="#" class="site-button">Read More <i class="fa fa-angle-right" aria-hidden="true"></i></a> </div>
-            </div>
-          </div>
-              </div>
-            </div>
                         </div>
 
                     </div>
@@ -330,11 +275,14 @@
 
 
                 <div class="section-full bg-img-fix content-inner overlay-black-middle our-projects-galery"
-                    style="background-image:url(images/background/bg9.php); background-position:center;">
+                    style="background-image:url(images/background/bg9.php); background-position:center;margin-top:-160px!important;">
 
                     <div class="container">
                         <h1 style="text-align:center;"> Some Features of ITI </h1>
                         <div class="row">
+
+
+
 
                             <div class="col-lg-3 col-sm-12 m-b30 ">
 
@@ -350,6 +298,8 @@
                                         <div class="dez-separator bg-primary style-liner"></div>
 
                                     </div>
+
+
 
                                     <p class="m-b0"> ITI colleges provide specialized training in a wide range of trades
                                         and vocations, including electrician, fitter, welder, machinist, plumber,
@@ -564,7 +514,7 @@
                                         Schemes </a>
                                 </div>
                             </div>
-                          
+
                         </div>
                     </div>
                 </div>
@@ -658,24 +608,20 @@
                             <div class="clearfix">
                                 <ul id="masonry"
                                     class="row dez-gallery-listing gallery-grid-4 m-b0 gallery lightgallery">
-                                    <?php
-                                    $i=1;
-$sql= "SELECT * FROM gallery_tbl";
-$result= mysqli_query($connection, $sql) or die("Query Failed.");
-while($row = mysqli_fetch_array($result)){
-?>
+
                                     <li class="card-container col-lg-3 col-lg-3 col-sm-6 jumping"
                                         style="position: absolute; left: 0px; top: 0px;">
                                         <div class="dez-gallery-box">
                                             <div class="dez-media dez-img-overlay1 dez-img-effect zoom-slow">
                                                 <a href="javascript:void(0);">
-                                                    <img width="480" height="430" src="<?php echo $row['gallery'];?>" alt="">
+                                                    <img width="480" height="430" src="pictures/pic1.jpg" alt="">
                                                 </a>
                                                 <div class="overlay-bx">
-                                                    <h5 style="color:white;padding-top:5px;"><?php echo $row['remark'];?></h5>
+                                                    <h5 style="color:white;padding-top:5px;">
+                                                        Lab</h5>
                                                     <div class="overlay-icon">
-                                                        <span data-exthumbimage="<?php echo $row['gallery'];?>"
-                                                            data-src="<?php echo $row['gallery'];?>" class="icon-bx-xs check-km">
+                                                        <span data-exthumbimage="pictures/pic1.jpg"
+                                                            data-src="pictures/pic1.jpg" class="icon-bx-xs check-km">
                                                             <i class="fa fa-picture-o"></i>
                                                         </span>
                                                     </div>
@@ -683,7 +629,68 @@ while($row = mysqli_fetch_array($result)){
                                             </div>
                                         </div>
                                     </li>
-<?php }?>
+                                    <li class="card-container col-lg-3 col-lg-3 col-sm-6 jumping"
+                                        style="position: absolute; left: 0px; top: 0px;">
+                                        <div class="dez-gallery-box">
+                                            <div class="dez-media dez-img-overlay1 dez-img-effect zoom-slow">
+                                                <a href="javascript:void(0);">
+                                                    <img width="480" height="430" src="pictures/students.png" alt="">
+                                                </a>
+                                                <div class="overlay-bx">
+                                                    <h5 style="color:white;padding-top:5px;">
+                                                        Students</h5>
+                                                    <div class="overlay-icon">
+                                                        <span data-exthumbimage="pictures/students.png"
+                                                            data-src="pictures/students.png"
+                                                            class="icon-bx-xs check-km">
+                                                            <i class="fa fa-picture-o"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="card-container col-lg-3 col-lg-3 col-sm-6 jumping"
+                                        style="position: absolute; left: 0px; top: 0px;">
+                                        <div class="dez-gallery-box">
+                                            <div class="dez-media dez-img-overlay1 dez-img-effect zoom-slow">
+                                                <a href="javascript:void(0);">
+                                                    <img width="480" height="430" src="pictures/placed_stu.jpg" alt="">
+                                                </a>
+                                                <div class="overlay-bx">
+                                                    <h5 style="color:white;padding-top:5px;">
+                                                        Result</h5>
+                                                    <div class="overlay-icon">
+                                                        <span data-exthumbimage="pictures/placed_stu.jpg"
+                                                            data-src="pictures/placed_stu.jpg"
+                                                            class="icon-bx-xs check-km">
+                                                            <i class="fa fa-picture-o"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="card-container col-lg-3 col-lg-3 col-sm-6 jumping"
+                                        style="position: absolute; left: 0px; top: 0px;">
+                                        <div class="dez-gallery-box">
+                                            <div class="dez-media dez-img-overlay1 dez-img-effect zoom-slow">
+                                                <a href="javascript:void(0);">
+                                                    <img width="480" height="430" src="pictures/19.png" alt="">
+                                                </a>
+                                                <div class="overlay-bx">
+                                                    <h5 style="color:white;padding-top:5px;">
+                                                        Practical</h5>
+                                                    <div class="overlay-icon">
+                                                        <span data-exthumbimage="pictures/19.png"
+                                                            data-src="pictures/19.png" class="icon-bx-xs check-km">
+                                                            <i class="fa fa-picture-o"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="m-tb30" style="margin-bottom:20px;">

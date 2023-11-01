@@ -12,10 +12,21 @@ include("connection.php");
     $experience = $_POST['experience'];
     $company_name = $_POST['company_name'];
     $previous_salary = $_POST['previous_salary'];
+
     $resume=$_FILES['resume']['name'];
     $resume_tmpname=($_FILES['resume']['tmp_name']);
-    $RESUME = "file/".$resume;
+    $RESUME ="file/".$resume;
     move_uploaded_file($resume_tmpname, $RESUME );
+
+    $allowed = array('doc','pdf');
+    $ext = pathinfo($resume, PATHINFO_EXTENSION);
+    if (!in_array($ext, $allowed)) {
+        $resumeErr="Invalid file type, Only .doc and pdf types are accepted.";
+        $res=array("status"=>2,"msg"=>$resumeErr);
+        echo json_encode($res);
+        return;
+    }
+
     $date = date('Y-m-d H:i:s');
    
   

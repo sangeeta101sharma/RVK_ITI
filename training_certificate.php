@@ -161,52 +161,184 @@
                                 </style>
 
                                 <div class="form-contaner">
-                                    <form>
+                                    <form id="enrollmentForm">
                                         <label for="inputField">Verify Enrollment</label>
-                                        <input type="text" id="certificate_No" name="certificate_No" placeholder="Enter Your Certificate No.">
-                                        <button type="submit" onclick="submitform()">Submit</button>
+                                        <input type="text" id="enrollmentNo" name="enrollmentNo"
+                                            placeholder="Enter Your Certificate No.">
+                                        <button type="submit">Submit</button>
                                     </form>
                                 </div>
 
                                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
                                 </script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-
+                                <link rel="stylesheet"
+                                    href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js">
+                                </script>
                                 <script type="text/javascript" src="JQUERY.js"></script>
                                 <script>
-                                    function submitform(){
-                                        event.preventDefault();
-                                        var Certificate_No=document.getElementById("certificate_No").value;
-                                        console.log(Certificate_No);
-                                     var dataStringer="certificate_No"+Certificate_No;
-                                        console.log(dataStringer);
+                                $(document).ready(function() {
+                                    $('#enrollmentForm').submit(function(e) {
+                                        e.preventDefault();
+                                        var enrollmentNo = $('#enrollmentNo').val();
 
-                                      $.ajax({
-                                        url:"admin/process/training_certificate.php",
-                                        type:"POST",
-                                        cache:false,
-                                        data:dataStringer,
-                                        success:function(result){
-                                            console.log(result);
-                                            var data = $.parseJSON(result);
-                                            if (data.status == 1) {
-                                                swal('', data.msg, 'success');
-                                                location.reload();
-                                            } else {
-                                                swal('', data.msg, 'error');
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: 'admin/process/training_certificate.php',
+                                            data: {
+                                                enrollmentNo: enrollmentNo
+                                            },
+                                            dataType: 'json',
+                                            success: function(result) {
+                                                console.log(result.data);  
+                                                if(result.status == 1){                                              
+                                                    $("#photo").attr("src", result.data[4]);
+                                                    $("#name").val(result.data[3]);
+                                                    $("#enrollment_no").val(result.data[1]);
+                                                    $("#father_name").val(result.data[5]);
+                                                    $("#trade").val(result.data[13]);
+                                                    $("#course_name").val(result.data[11]);
+                                                    $("#course_duration").val(result.data[12]);
+                                                    $("#contact").val(result.data[8]);
+                                                    document.getElementById("popup").style.display = "block";
+                                                }else{
+                                                    swal("",result.message,"warning");
+                                                }
+                                            },
+                                            error: function(err) {
+                                                console.log(err);
+                                                alert('An error occurred.');
                                             }
-                                        } 
-                                      });
-                                    }
+                                        });
+                                    });
+                                });
                                 </script>
-
                             </div>
                         </div>
 
                     </div>
 
                 </div>
+                <!-- popup table start-->
+
+                <style>
+                /* CSS for the popup form */
+                .popup {
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.7);
+                    z-index: 1;
+                }
+
+                .popup-content {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: #fff;
+                    padding: 20px;
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                }
+
+                .input-group {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+
+                .input-group .input-field {
+                    flex: 0 0 50%;
+                    /* Two columns */
+                    padding: 10px;
+                }
+
+                .input-group label {
+                    font-weight: bold;
+                    display: block;
+                    margin-bottom: 5px;
+                }
+
+                .input-group input {
+                    width: 100%;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+
+                .popup-button {
+                    background: #007BFF;
+                    color: #fff;
+                    border: none;
+                    border-radius: 5px;
+                    padding: 10px 15px;
+                    cursor: pointer;
+                }
+                </style>
+
+                <button id="open-popup" class="popup-button" style="display:none;">Open Popup</button>
+
+                <div id="popup" class="popup">
+                                                  
+                    <div class="popup-content">
+                        <h2>Enrollment Verification Successfull </h2>
+                        <div class="input-group">
+
+                            <div class="input-field">
+                                <img src="" alt="student image" height="250" id="photo"
+                                    width="100" style="border:2px solid black;border-radius:5px;">
+                            </div>
+                            <div class="input-field">
+                                <label for="input1">Student Name</label>
+                                <input type="text" id="name" name="name" value="" readonly>
+                            </div>
+                            <div class="input-field">
+                                <label for="input6">Fater's Name</label>
+                                <input type="text" id="father_name" name="father_name" value="" readonly>
+                            </div>
+                            <div class="input-field">
+                                <label for="input2">Enrollment No.</label>
+                                <input type="text" id="enrollment_no" name="enrollment_no"
+                                    value="" readonly>
+                            </div>
+                            <div class="input-field">
+                                <label for="input4">Trade</label>
+                                <input type="text" id="trade" name="trade" value="" readonly>
+                            </div>
+                            <div class="input-field">
+                                <label for="input3">Course Name</label>
+                                <input type="text" id="course_name" name="course_name" value="" readonly>
+                            </div>
+                            <div class="input-field">
+                                <label for="input6">Course Duration</label>
+                                <input type="text" id="course_duration" name="course_duration"
+                                    value="" readonly>
+                            </div>
+                            <div class="input-field">
+                                <label for="input5">Contact No. </label>
+                                <input type="text" id="contact" name="contact" value="" readonly>
+                            </div>
+
+                        </div>
+                        <button id="close-popup" class="popup-button">Close</button>
+                    </div>
+                  
+                </div>
+    <script>
+        // JavaScript to open and close the popup
+       
+        document.getElementById("open-popup").addEventListener("click", function() {
+            document.getElementById("popup").style.display = "block";
+        });
+
+        document.getElementById("close-popup").addEventListener("click", function() {
+            document.getElementById("popup").style.display = "none";
+        });
+    </script> 
+<!-- popup table end -->
 
                 <!-- contact area END -->
 

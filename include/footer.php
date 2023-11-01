@@ -20,66 +20,37 @@
 
                             <ul>
 
-                              <li><a href="#">Vocational Education & Skill Development, Government of Uttar Pradesh</a></li>
-                              <li><a href="#">Directorate of Training & Employment,
-Government of Uttar Pradesh.</a></li>
-                              <li><a href="#">Rajya Vyavsaik Prasikshan Parishad,Uttar Pradesh</a></li>
-                              <li><a href="#">NCVT-Ministry of Skill Development And Entrepreneurship, Government of India.</a></li>
-                              <li><a href="#">BHARAT SKILLS
-Directorate General of Training (DGT)</a></li>
-                              <li><a href="#">National Instructional Media Institute (NIMI)</a></li>
-                              <li><a href="#">Rojgar Sangam,Sewayojan Vibhag,Uttar Pradesh</a></li>
-                             
-                              <!-- <li><a href="ddddddddddddd">vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv</a></li> -->
-
-                           
-
-                           <li> <a href="#" target="_blank"> e-Certificate Verification | ई-प्रमाण पत्र सत्यापन </a> </li>
-
-                         
-
-                                                  
-
+                              <li><a href="index.php">Home</a></li>
+                              <li><a href="about_rvk.php">About Us</a></li>
+                              <li><a href="fitter.php">Course</a></li>
+                              <li><a href="placed_student.php">Placement</a></li>
+                              <li><a href="semester_annual_exam.php">Exams</a></li>
+                              <li><a href="students_feedback.php">Students Zone </a></li>
+                              <li><a href="photo_gallery.php">Gallery</a></li>
+                              <li> <a href="#"> Convocation </a></li>
+                              <li><a href="contact.php">Contact Us </a></li>
                         </ul>
-
                         </div>
 
           </div>
-
           <div class="col-lg-3 col-sm-12 footer-col-4">
-
             <div class="widget widget_gallery">
-
               <h4 class="m-b15 text-uppercase">Address</h4>
-
               <div class="dez-separator bg-primary"></div>
-
               <p> <?php echo $line['address'];?></p>
-
               <p><a href="tel:+" style="color:#fff;"><i class="fa fa-phone" aria-hidden="true"></i><?php echo $line['contact'];?></a> </p>
-
               <p><a href="mailto:" style="color:#fff;"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo $line['email'];?></a></p>
-
               <p><a href="#" style="color:#fff;"><i class="fa fa-globe" aria-hidden="true"></i> &nbsp; rvkiti.com</a></p>
-
             </div>
-
             <div class="m-tb15">
-
               <ul class="dez-social-icon border dez-social-icon-lg">
-
                 <li><a href="javascript:void(0);" class="fa fa-twitter tw-btn"></a></li>
-
                 <li><a href="javascript:void(0);" class="fa fa-linkedin link-btn"></a></li>
-
               </ul>
-
             </div>
 
 			  <p>Visitor counter</p>
-
 			<img src="https://counter6.optistats.ovh/private/freecounterstat.php?c=x14851zybcxjtpxxt9hkdkjg1cl71bdp" border="0" title="website view counter" alt="website view counter">
-
           </div>
 
           <div class="col-lg-4 col-sm-12 footer-col-4">

@@ -172,7 +172,112 @@
                                         <button type="submit">Submit</button>
                                     </form>
                                 </div>
+                                    <!-- popup table start-->
 
+    <style>
+        /* CSS for the popup form */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .input-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .input-group .input-field {
+            flex: 0 0 50%; /* Two columns */
+            padding: 10px;
+        }
+
+        .input-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .popup-button {
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+    </style>
+
+    <button id="open-popup" class="popup-button">Open Popup</button>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h2>Certificate Verification Successfull </h2>
+            <div class="input-group">
+                <div class="input-field">
+                    <label for="input1">Student Name</label>
+                    <input type="text" id="input1" name="input1">
+                </div>
+                <div class="input-field">
+                    <label for="input2">Enrollment No.</label>
+                    <input type="text" id="input2" name="input2">
+                </div>
+                <div class="input-field">
+                    <label for="input3">Course Name</label>
+                    <input type="text" id="input3" name="input3">
+                </div>
+                <div class="input-field">
+                    <label for="input4">Course Duration </label>
+                    <input type="text" id="input4" name="input4">
+                </div>
+                <div class="input-field">
+                    <label for="input5">Education Period</label>
+                    <input type="text" id="input5" name="input5">
+                </div>
+                <div class="input-field">
+                    <label for="input6">Grade</label>
+                    <input type="text" id="input6" name="input6">
+                </div>
+            </div>
+            <button id="close-popup" class="popup-button">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to open and close the popup
+        document.getElementById("open-popup").addEventListener("click", function() {
+            document.getElementById("popup").style.display = "block";
+        });
+
+        document.getElementById("close-popup").addEventListener("click", function() {
+            document.getElementById("popup").style.display = "none";
+        });
+    </script>
+
+                                    <!-- popup table end -->
 
 
                             </div>

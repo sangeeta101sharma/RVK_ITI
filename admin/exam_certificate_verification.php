@@ -21,7 +21,7 @@ if(!isLoggedIn()){
 if($_SERVER["REQUEST_METHOD"]="POST"){
 
     $Certificate = $_POST['certificate'];
-echo    $Certificate;
+
    /*   if(isset($remark) && !empty($remark)){  
         if(!preg_match("/^['a-zA-Z-'* ]*$/",$remark)) {
             $_SESSION['status'] =2;
@@ -43,8 +43,8 @@ echo    $Certificate;
        $status= 1;
        $msg = "Data Inserted...";
        
-         header('location:../exam_certificate_verification.php');
-         exit();
+       //  header('location:exam_certificate_verification.php');
+        //  exit();
    }else{
         $status = 2;
          $msg = "Something went wrong!!!";

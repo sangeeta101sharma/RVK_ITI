@@ -178,7 +178,7 @@
                                             <textarea id="feedback" name="feedback" rows="4"></textarea>
 
                                             <button type="submit" onclick="submitform()">Submit</button>
-                                            <button type="reset">Reset</button>
+                                         <!--    <button type="reset">Reset</button> -->
                                         </form>
                                     </div> 
                                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>

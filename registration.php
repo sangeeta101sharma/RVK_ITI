@@ -39,7 +39,9 @@
     <link rel="stylesheet" type="text/css" href="css/navigation.css">
 
     <link rel="stylesheet" type="text/css" href="css/contrast.css">
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </head>
 
 <body id="bg">
@@ -165,7 +167,7 @@
                                     </style>
                                     <div class="contaner">
                                         <h2>Submit Resume</h2>
-                                        <form enctype="multipart/form-data">
+                                        <form id="file-upload-form" enctype="multipart/form-data">
                                             <label for="name">Name:</label>
                                             <input type="text" id="name" name="name" required>
 
@@ -179,11 +181,7 @@
                                             <input type="text" id="address" name="address" required>
 
                                             <label for="department">Job Applied For:</label>
-                                            <select   id="job" name="job">
-                                                <option value="Hardware">Hardware</option>
-                                                <option value="MCSE">MCSE</option>
-                                                <option value="CCNA">CCNA</option>
-                                            </select>
+                                            <input type="text" id="job" name="job" required>
 
 
                                             <label for="location">Desired Location:</label>
@@ -204,71 +202,57 @@
                                             <label for="resume">Upload Resume:</label>
                                             <input type="file" id="resume" name="resume" >
 
-                                            <button type="submit" onclick="submitform()" class="submit-button">Submit</button>
+                                            <button type="submit" id="upload-button" class="submit-button">Submit</button>
                                         </form>
                                     </div>
 
-                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
-                                </script>
-                                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-                                <script type="text/javascript" src="JQUERY.js"></script>
-                                <!-- form AJAX -->
-                                <script>
-                                function submitform() {
-                                    event.preventDefault();
-                                    var Name = document.getElementById("name").value;
-                                    console.log(Name);
-                                    var Email = document.getElementById("email").value;
-                                    console.log(Email);
-                                    var Phone = document.getElementById("phone").value;
-                                    console.log(Phone);
-                                    var Address = document.getElementById("address").value;
-                                    console.log(Address);
-                                    var Job = document.getElementById("job").value;
-                                    console.log(Job);
-                                    var Location = document.getElementById("location").value;
-                                    console.log(Location);
-                                     var Expected_salary = document.getElementById("expected_salary").value;
-                                    console.log(Expected_salary);
-                                    var Experience = document.getElementById("experience").value;
-                                    console.log(Experience);
-                                    var Company_name = document.getElementById("company_name").value;
-                                    console.log(Company_name);
-                                    var Previous_salary = document.getElementById("previous_salary").value;
-                                    console.log(Previous_salary);
-                                    var Resume = document.getElementById("resume").value;
-                                    console.log(Resume);
+                                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+                     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                    <script  type="text/javascript" src="JQUERY.js"></script>
+                     <!-- form AJAX -->
+                     <script>
+        $(document).ready(function () {
+    $('#upload-button').on('click', function (e) {
+        e.preventDefault();  
+        var formData = new FormData();
+        formData.append('name', $('#name').val());
+        formData.append('email', $('#email').val());
+        formData.append('phone', $('#phone').val());
+        formData.append('address', $('#address').val());
+        formData.append('job', $('#job').val());
+        formData.append('location', $('#location').val());
+        formData.append('expected_salary', $('#expected_salary').val());
+        formData.append('experience', $('#experience').val());
+        formData.append('company_name', $('#company_name').val());
+        formData.append('previous_salary', $('#previous_salary').val());
+        formData.append('resume', $('#resume')[0].files[0]);
 
-                                    var dataStringer = "name=" +Name +
-                                        "&email=" +Email +
-                                        "&phone=" +Phone +
-                                        "&address=" +Address +
-                                        "&job=" +Job+
-                                        "&location=" +Location +
-                                        "&expected_salary=" +Expected_salary +
-                                        "&experience=" +Experience +
-                                        "&company_name=" +Company_name +
-                                        "&previous_salary=" +Previous_salary +
-                                        "&resume=" +Resume;
-                                    console.log(dataStringer);
-                              $.ajax({
-                                        url: "admin/process/registration.php",
-                                        type: "POST",
-                                        cache: false,
-                                        data: dataStringer,
-                                        success: function(result) {
-                                            console.log(result);
-                                            var d = $.parseJSON(result);
-                                            if (d.status == 1) {
-                                                swal('', d.msg, 'success');
-                                                location.reload();
-                                            } else {
-                                                swal('', d.msg, 'error');
-                                            }
-                                        }
-                                    });  
-                                }
-                                </script>
+        $.ajax({
+            type: 'POST',
+            url: 'admin/process/registration.php',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (result) {
+               console.log(result);
+               //alert(result);
+               var data=$.parseJSON(result);
+               if(data.status==1){
+                swal('',data.msg,"success");
+                location.reload();
+               }
+               else{
+                swal('',data.msg , "error");
+               } 
+            }
+        });
+    });
+});
+
+    </script>
+                    </script>
                             </div>
                         </div>
 
